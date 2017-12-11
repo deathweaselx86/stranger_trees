@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -72,6 +73,9 @@ target/
 
 # pyenv
 .python-version
+
+# dotenv
+.env
 
 # celery beat schedule file
 celerybeat-schedule
