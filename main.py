@@ -6,8 +6,6 @@ import boto.sqs
 import logging
 import argparse
 
-parser = argparse.ArgumentParser(description='Process some integers.')
-
 logger = logging.getLogger(__name__)
 
 class QueueWrapper(object):
