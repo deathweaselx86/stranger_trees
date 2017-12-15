@@ -130,7 +130,7 @@ def send_message(message):
     queue = QueueWrapper().get_queue()
     queue.write(queue.new_message(body=json.dumps({"text": message})))
 
-def purge_queue(message):
+def purge_queue():
     queue = QueueWrapper().get_queue()
     queue.purge()
 
@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
     display = StrangerTreeDisplay(args.debug)
     if args.purge:
-        purge_queue(args.message)
+        purge_queue()
     if args.message:
         send_message(args.message)
     display.start()
