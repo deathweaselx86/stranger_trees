@@ -101,7 +101,6 @@ class StrangerTreeDisplay(object):
             pixels = self._get_reset_pixels()
             try:
                 index = StrangerTreeDisplay.ASCII_PIXEL_TABLE[msg[i]][0]
-                value = StrangerTreeDisplay.ASCII_PIXEL_TABLE[msg[i]][1]
                 pixels[index] = [StrangerTreeDisplay.RED,StrangerTreeDisplay.GREEN][i%2]
                 self.client.put_pixels(pixels)
             except KeyError:
