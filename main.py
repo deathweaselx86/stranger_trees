@@ -24,9 +24,10 @@ class QueueWrapper(object):
  
 
 class StrangerTreeDisplay(object):
-    DEFAULT_MESSAGE = "DEFAULT HOLIDAYS"
+    DEFAULT_MESSAGE = "HAPPY HOLIDAYS FROM THE ZEBRA"
     OFF_PIXEL = (0,0,0)
-    
+    GREEN = (255,0,0)
+    RED = (0,255,0)
     # here is a table matching ASCII characters to
     # pixels in our string, channels, and colors
     # These will all show up on the first string right now
@@ -101,7 +102,7 @@ class StrangerTreeDisplay(object):
             try:
                 index = StrangerTreeDisplay.ASCII_PIXEL_TABLE[msg[i]][0]
                 value = StrangerTreeDisplay.ASCII_PIXEL_TABLE[msg[i]][1]
-                pixels[index] = value
+                pixels[index] = [StrangerTreeDisplay.RED,StrangerTreeDisplay.GREEN][i%2]
                 self.client.put_pixels(pixels)
             except KeyError:
                 self.client.put_pixels(pixels) # this is probably a space; no pixels at all
